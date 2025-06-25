@@ -16,11 +16,15 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        // Разрешаем запросы с указанных источников (фронтенд и, возможно, сам бэкенд)
-        policy.WithOrigins("http://localhost:3000", "http://localhost:5022")
-            .AllowAnyHeader() // Разрешаем любые заголовки
-            .AllowAnyMethod() // Разрешаем любые HTTP методы (GET, POST и т.д.)
-            .AllowCredentials(); // Разрешаем передачу учетных данных (например, куки или заголовки авторизации)
+        policy.WithOrigins(
+            "http://localhost:3000",
+            "http://localhost:5022",
+            "http://80.78.243.170",
+            "http://80.78.243.170:80"
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
 
