@@ -1,0 +1,23 @@
+
+services:
+  frontend:
+    build: ./frontend/chat
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:5022
+  backend:
+    build: ./backend/RealTimeChat
+    ports:
+      - "5022:5022"
+    depends_on:
+      - redis
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:5022
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379" 
