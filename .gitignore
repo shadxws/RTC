@@ -1,0 +1,73 @@
+# Node.js / React
+node_modules/
+build/
+dist/
+.env
+.env.*
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# JetBrains IDE
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# ASP.NET / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.jfm
+*.pdb
+*.cache
+*.log
+*.vs/
+
+# SQLite database
+*.db
+
+# Other
+*.tgz
+*.gz
+*.zip
+*.tar
+*.7z
+
+# Ignore test coverage
+coverage/
+
+# Ignore frontend build artifacts
+frontend/chat/build/
+
+# Ignore backend build artifacts
+backend/RealTimeChat/bin/
+backend/RealTimeChat/obj/
+
+# Ignore system files
+*.swp
+*.tmp
+
+# Ignore npm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore local Docker files
+**/.dockerignore
+**/Dockerfile*
+
+# Ignore local settings
+*.local 
