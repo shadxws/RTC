@@ -49,12 +49,10 @@ const App = () => {
 		setError("");
 
 		// Создаем новый экземпляр SignalR HubConnectionBuilder
-		const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5022";
 		const connection = new HubConnectionBuilder()
-			//.withUrl("http://localhost:5022/chatHub") // Указываем URL SignalR хаба
-			.withUrl(`${backendUrl}/chatHub`) // Указываем URL SignalR хаба
-			.withAutomaticReconnect() // Настраиваем автоматическое переподключение
-			.build(); // Собираем объект подключения
+			.withUrl("/chatHub") // всегда относительный путь
+			.withAutomaticReconnect()
+			.build();
 
 		// Флаг для отслеживания, произошла ли ошибка при вызове JoinChat на сервере
 		let joinError = false;
